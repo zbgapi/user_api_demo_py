@@ -76,10 +76,10 @@ def get_currency_list():
 
 # 增加委托单，也就是下单接口
 def add_entrust(market_name, amount, price, range_type, entrust_type):
-    market_id = get_market_id_by_name(market_name)
-    if not market_id:
-        raise CustomError(market_name + '市场不存在')
-    params = {'marketId': market_id, 'amount': amount, 'price': price, 'rangeType': range_type, 'type': entrust_type}
+    //market_id = get_market_id_by_name(market_name)
+    //if not market_id:
+    //    raise CustomError(market_name + '市场不存在')
+    params = {'market_name': market_name, 'amount': amount, 'price': price, 'rangeType': range_type, 'type': entrust_type}
     status, result = signed_request_post(config_params.EXCHANGE_HOST + config_params.API_ADD_ENTRUST, **params)
     return status, result
 
